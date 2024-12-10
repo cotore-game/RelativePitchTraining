@@ -153,6 +153,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 949391f7abd4b5d4b919fac4bd268e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tonelength: 5
+  playtone: 7
+  Pitch: 4
+  playchordType: 6
 --- !u!82 &479975073
 AudioSource:
   m_ObjectHideFlags: 0

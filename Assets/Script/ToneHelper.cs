@@ -7,7 +7,7 @@ public enum Tone
 
 public static class ToneHelper
 {
-    private const double BaseFrequency = 440.0; // A4 (基準周波数)
+    private const double BaseFrequency = 440.0f; // A4 (基準周波数)
     private const int BaseOctave = 4; // A4のオクターブ
 
     /// <summary>

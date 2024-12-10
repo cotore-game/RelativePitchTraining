@@ -4,19 +4,25 @@
 public class TonePlayer : MonoBehaviour
 {
     private AudioSource audioSource;
+    public float tonelength = 5.0f;
+    public Tone playtone = Tone.C;
+    [Range(0,7)] public int Pitch = 4;
+    public ChordType playchordType = ChordType.Major;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
 
+        /*
         // 単音再生: C4
-        AudioClip singleTone = AudioGenerator.GenerateTone(Tone.C, 4, 1.0f);
+        AudioClip singleTone = AudioGenerator.GenerateTone(playtone, 4, tonelength);
         audioSource.clip = singleTone;
         audioSource.Play();
+        */
 
         // コード再生: Cメジャー
-        AudioClip chord = AudioGenerator.GenerateChord(Tone.C, ChordType.Major, 4, 1.0f);
+        AudioClip chord = AudioGenerator.GenerateChord(playtone, playchordType, Pitch, tonelength);
         audioSource.clip = chord;
-        audioSource.PlayDelayed(1.0f); // 単音再生後に再生
+        audioSource.Play(); // 単音再生後に再生
     }
 }
