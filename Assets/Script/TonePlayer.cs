@@ -34,6 +34,7 @@ public class TonePlayer : MonoBehaviour
     private void Update()
     {
         remainingTime -= Time.deltaTime;
+        if (remainingTime < 0) remainingTime = 0;
         timeText.text = "Time: " + remainingTime.ToString("F1");
         if (remainingTime <= 0)
         {
@@ -66,6 +67,7 @@ public class TonePlayer : MonoBehaviour
 
     private void CheckAnswer()
     {
+        audioSource.Stop();
         Tone selectedTone = (Tone)toneDropdown.value;
         ChordType selectedChord = (ChordType)chordDropdown.value;
 
@@ -96,8 +98,14 @@ public class TonePlayer : MonoBehaviour
 
     private void EndGame()
     {
+        audioSource.Stop();
         resultText.text = "Game Over! Final Score: " + score;
         submitButton.interactable = false;
+
+        if (score >= 100) chordText.text = "Amazing!";
+        else if (score >= 50) chordText.text = "Great Job!";
+        else if (score >= 20) chordText.text = "Good Effort!";
+        else chordText.text = "Try Again!";
     }
 
     private string GetChordName(ChordType playchordType, Tone playtone)
