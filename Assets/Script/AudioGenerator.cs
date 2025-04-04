@@ -13,7 +13,7 @@ public class AudioGenerator : MonoBehaviour
 
     /// <summary>
     /// コードのAudioClipを生成
-    /// </summary>
+    /// </summary>0
     public static AudioClip GenerateChord(Tone root, ChordType type, int octave, float length)
     {
         Tone[] tones = ChordHelper.GetChordTones(root, type);

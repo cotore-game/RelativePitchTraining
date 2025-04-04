@@ -13,19 +13,19 @@ public static class ChordHelper
         switch (type)
         {
             case ChordType.Major:
-                return new Tone[] { root, GetInterval(root, 4), GetInterval(root, 7) };
+                return new Tone[] { GetInterval(root, -12), root, GetInterval(root, 4), GetInterval(root, 7) };
             case ChordType.Minor:
-                return new Tone[] { root, GetInterval(root, 3), GetInterval(root, 7) };
+                return new Tone[] { GetInterval(root, -12), root, GetInterval(root, 3), GetInterval(root, 7) };
             case ChordType.Augmented:
-                return new Tone[] { root, GetInterval(root, 4), GetInterval(root, 8) };
+                return new Tone[] { GetInterval(root, -12), root, GetInterval(root, 4), GetInterval(root, 8) };
             case ChordType.Diminished:
-                return new Tone[] { root, GetInterval(root, 3), GetInterval(root, 6) };
+                return new Tone[] { GetInterval(root, -12), root, GetInterval(root, 3), GetInterval(root, 6) };
             case ChordType.Major7:
-                return new Tone[] { root, GetInterval(root, 4), GetInterval(root, 7), GetInterval(root, 11) };
+                return new Tone[] { GetInterval(root, -12), root, GetInterval(root, 4), GetInterval(root, 7), GetInterval(root, 11) };
             case ChordType.Minor7:
-                return new Tone[] { root, GetInterval(root, 3), GetInterval(root, 7), GetInterval(root, 10) };
+                return new Tone[] { GetInterval(root, -12), root, GetInterval(root, 3), GetInterval(root, 7), GetInterval(root, 10) };
             case ChordType.Dominant7:
-                return new Tone[] { root, GetInterval(root, 4), GetInterval(root, 7), GetInterval(root, 10) };
+                return new Tone[] { GetInterval(root, -12), root, GetInterval(root, 4), GetInterval(root, 7), GetInterval(root, 10) };
             default:
                 return new Tone[] { root };
         }
