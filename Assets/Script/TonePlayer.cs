@@ -23,6 +23,8 @@ public class TonePlayer : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        resultText.text = "Music is Elegant";
+        scoreText.text = "Score: 0";
 
         remainingTime = gameTime;
         PopulateDropdown(toneDropdown, typeof(Tone));
